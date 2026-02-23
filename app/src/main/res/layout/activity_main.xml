@@ -3,92 +3,104 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
     android:background="@drawable/backgrond"
+    android:padding="20dp"
     tools:context=".MainActivity">
 
+    <!-- Card View chứa nội dung chính -->
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="30dp"
-        app:cardCornerRadius="30dp"
-        app:cardElevation="20dp"
-        android:background="@drawable/custom_edittext">
+        android:layout_margin="20dp"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="15dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
             android:orientation="vertical"
             android:background="@color/white"
-            android:padding="30dp">
+            android:padding="30dp"
+            android:gravity="center">
 
-
+            <!-- Icon/Title -->
             <TextView
-                android:id="@+id/loginText"
+                android:id="@+id/tvTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Login"
+                android:text="THÀNH PHỐ CHÍNH"
                 android:textAlignment="center"
                 android:textColor="@color/blue_background"
-                android:textSize="36sp"
-                android:textStyle="bold" />
+                android:textSize="32sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="20dp" />
 
-            <EditText
-                android:id="@+id/username"
+            <!-- Welcome Message -->
+            <TextView
+                android:id="@+id/tvWelcome"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginTop="40dp"
-                android:background="@drawable/custom_edittext"
-                android:drawableLeft="@drawable/ic_baseline_person_24"
-                android:drawablePadding="8dp"
-                android:hint="Username"
-                android:padding="8dp"
+                android:layout_height="wrap_content"
+                android:text="Chào mừng đến MainCity!\nBạn đã đăng nhập thành công."
+                android:textAlignment="center"
                 android:textColor="@color/black"
-                android:textColorHighlight="@color/cardview_dark_background" />
+                android:textSize="18sp"
+                android:layout_marginBottom="40dp"
+                android:lineSpacingExtra="8dp" />
 
-            <EditText
-                android:id="@+id/password"
+            <!-- Thông tin trạng thái -->
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/custom_edittext"
-                android:drawableLeft="@drawable/ic_lock_24"
-                android:drawablePadding="8dp"
-                android:hint="Password"
-                android:inputType="textPassword"
-                android:padding="8dp"
-                android:textColor="@color/black"
-                android:textColorHighlight="@color/cardview_dark_background" />
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginBottom="40dp">
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Trạng thái: "
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Đã đăng nhập"
+                    android:textColor="@android:color/holo_green_dark"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <!-- Logout Button -->
             <Button
-                android:id="@+id/loginButton"
+                android:id="@+id/btnLogout"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:layout_marginTop="30dp"
-                android:backgroundTint="@color/blue_background"
-                android:text="Login"
-                android:textColor="@color/white"
+                android:text="Đăng Xuất"
                 android:textSize="18sp"
+                android:textColor="@color/white"
+                android:backgroundTint="@color/blue_background"
                 app:cornerRadius="10dp" />
 
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
 
+    <!-- Thông tin thêm -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="8dp"
-        android:text="Not yet registered? SignUp Now"
-        android:textSize="14sp"
-        android:textAlignment="center"
-        android:id="@+id/signupText"
+        android:text="Phiên làm việc của bạn sẽ hết hạn sau 30 phút không hoạt động"
+        android:textSize="12sp"
         android:textColor="@color/white"
-        android:layout_marginBottom="20dp"/>
+        android:textAlignment="center"
+        android:layout_marginTop="30dp"
+        android:padding="8dp" />
 
 </LinearLayout>

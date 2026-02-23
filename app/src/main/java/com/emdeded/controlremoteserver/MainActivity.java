@@ -1,46 +1,71 @@
 package com.emdeded.controlremoteserver;
-//
-//import android.os.Bundle;
-//
-//import androidx.activity.EdgeToEdge;
-//import androidx.appcompat.app.AppCompatActivity;
-//import androidx.core.graphics.Insets;
-//import androidx.core.view.ViewCompat;
-//import androidx.core.view.WindowInsetsCompat;
-//
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
+/**
+ * MainActivity - Màn hình chính (MainCity) sau khi đăng nhập thành công
+ */
 public class MainActivity extends AppCompatActivity {
 
-    EditText username;
-    EditText password;
-    Button loginButton;
-
+    private TextView tvWelcome;
+    private Button btnLogout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_main);
 
-        username = findViewById(R.id.username);
-        password = findViewById(R.id.password);
-        loginButton = findViewById(R.id.loginButton);
+        // Khởi tạo các view
+        tvWelcome = findViewById(R.id.tvWelcome);
+        btnLogout = findViewById(R.id.btnLogout);
 
-        loginButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (username.getText().toString().equals("admin") && password.getText().toString().equals("1234")) {
-                    Toast.makeText(MainActivity.this, "Login Successful!", Toast.LENGTH_SHORT).show();
-                } else {
-                    Toast.makeText(MainActivity.this, "Login Failed!", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
+        // Hiển thị lời chào
+        displayWelcomeMessage();
+
+        // Xử lý sự kiện logout
+        btnLogout.setOnClickListener(view -> handleLogout());
+    }
+
+    /**
+     * Hiển thị lời chào người dùng
+     */
+    private void displayWelcomeMessage() {
+        tvWelcome.setText("Chào mừng đến MainCity!\nBạn đã đăng nhập thành công.");
+    }
+
+    /**
+     * Xử lý logout - quay lại màn hình login
+     */
+    private void handleLogout() {
+        // Xóa dữ liệu session/preferences nếu có (tùy chọn)
+        clearSession();
+
+        // Quay lại LoginActivity
+        finish();
+        Toast.makeText(MainActivity.this, "Đã đăng xuất!", Toast.LENGTH_SHORT).show();
+    }
+
+    /**
+     * Xóa dữ liệu phiên làm việc
+     */
+    private void clearSession() {
+        // TODO: Xóa token, user info từ SharedPreferences hoặc database
+    }
+
+    /**
+     * Ngăn không cho người dùng quay lại màn hình login bằng back button
+     */
+    @Override
+    public void onBackPressed() {
+        // Nếu muốn cho phép back, comment dòng super.onBackPressed()
+         super.onBackPressed();
+        
+        // Nếu không muốn cho phép back, chỉ cần logout
+        handleLogout();
     }
 }
