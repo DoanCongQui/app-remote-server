@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <!-- Cho phép HTTP (cleartext) cho Tinker Board -->
+    <domain-config cleartextTrafficPermitted="true">
+        <!-- Local network -->
+        <domain includeSubdomains="true">192.168.1.15</domain>
+        <domain includeSubdomains="true">localhost</domain>
+        <domain includeSubdomains="true">127.0.0.1</domain>
+        
+        <!-- Tailscale VPN -->
+        <domain includeSubdomains="true">100.114.246.3</domain>
+        <domain includeSubdomains="true">100.0.0.0/8</domain>
+    </domain-config>
+</network-security-config>

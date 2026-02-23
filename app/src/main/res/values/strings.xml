@@ -28,4 +28,28 @@
     <string name="logout_message">Đã đăng xuất!</string>
     <string name="session_info">Phiên làm việc của bạn sẽ hết hạn sau 30 phút không hoạt động</string>
 
+    <!-- Remote Control Activity Strings -->
+    <string name="remote_title">Điều Khiển Từ Xa</string>
+    <string name="remote_subtitle">Tinker Board (192.168.1.15)</string>
+    <string name="remote_status">Trạng Thái Kết Nối</string>
+    <string name="btn_remote_control">Điều Khiển Relay</string>
+    <string name="btn_camera_stream">Xem Camera</string>
+    <string name="btn_server_status">Trạng Thái Server</string>
+    <string name="relay_controls">Điều Khiển Relay</string>
+    <string name="connecting">Đang kết nối...</string>
+    <string name="refresh">Làm Mới</string>
+    <string name="btn_refresh">Làm Mới</string>
+    <string name="relay_status">Trạng Thái Relay</string>
+    <string name="relay_on">BẬT</string>
+    <string name="relay_off">TẮT</string>
+    <string name="error_connection">Không thể kết nối tới Tinker Board</string>
+    <string name="error_timeout">Kết nối hết thời gian chờ</string>
+    <string name="error_api">Lỗi API: %s</string>
+    <string name="server_status">Trạng Thái Server</string>
+    <string name="server_online">Online</string>
+    <string name="server_offline">Offline</string>
+    <string name="camera_stream">Xem Camera</string>
+    <string name="dashboard_title">Bảng Điều Khiển</string>
+    <string name="btn_settings">Cài Đặt</string>
+
 </resources>

@@ -77,6 +77,30 @@
 
             </LinearLayout>
 
+            <!-- Remote Control Button -->
+            <Button
+                android:id="@+id/btnRemoteControl"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="@string/btn_remote_control"
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                android:backgroundTint="@color/blue_background"
+                app:cornerRadius="10dp"
+                android:layout_marginBottom="15dp" />
+
+            <!-- Dashboard Button -->
+            <Button
+                android:id="@+id/btnDashboard"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="@string/dashboard_title"
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                android:backgroundTint="@android:color/holo_green_dark"
+                app:cornerRadius="10dp"
+                android:layout_marginBottom="15dp" />
+
             <!-- Logout Button -->
             <Button
                 android:id="@+id/btnLogout"
@@ -85,7 +109,7 @@
                 android:text="Đăng Xuất"
                 android:textSize="18sp"
                 android:textColor="@color/white"
-                android:backgroundTint="@color/blue_background"
+                android:backgroundTint="@android:color/holo_red_dark"
                 app:cornerRadius="10dp" />
 
         </LinearLayout>
